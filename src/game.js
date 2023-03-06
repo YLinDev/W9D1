@@ -14,7 +14,7 @@ class Game {
     addAsteroids(){
         for (let i = 0; i < Game.NUM_ASTEROIDS; i++){
             let randPos = this.randomPosition();
-            this.asteroids.push(new Asteroid({pos:randPos}))
+            this.asteroids.push(new Asteroid({pos:randPos, game:this}))
         }
     }
 
@@ -31,6 +31,32 @@ class Game {
 
     moveObject() {
         this.asteroids.forEach((rock) => rock.move())
+    }
+
+    wrap(pos) {
+        // let newX = pos[0] % Game.DIM_X;
+        // if (newX < 0) newX = Game.DIM_X;
+        // if (newX < 0) newX = newY;
+        // let newY = pos[1] % Game.DIM_Y;
+        // if (newY < 0) newY= Game.DIM_Y;
+        // if (newY < 0) newY = -newY;
+
+        let newX = pos[0];
+        if (newX <= 0) {
+            newX = Game.DIM_X;
+        } else if (newX >= Game.DIM_X) {
+            newX = 0;
+        }
+
+        let newY = pos[1];
+        if (newY <= 0) {
+            newY = Game.DIM_Y;
+        } else if (newY >= Game.DIM_Y) {
+            newY = 0;
+        }
+
+
+        return [newX, newY];
     }
 }
 

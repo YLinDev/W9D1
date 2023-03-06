@@ -9,7 +9,8 @@ class Asteroid extends MovingObject {
             pos : arg["pos"], 
             color : Asteroid.COLOR,
             radius : Asteroid.RADIUS, 
-            vel : randomVec(10)
+            vel : randomVec(5),
+            game : arg["game"]
         }
         super(obj);
     }
