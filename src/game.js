@@ -1,9 +1,9 @@
 import Asteroid from "./asteroid";
 
 class Game {
-    static DIM_X
-    static DIM_Y
-    static NUM_ASTEROIDS
+    static DIM_X = 500;
+    static DIM_Y = 500;
+    static NUM_ASTEROIDS = 10;
 
     constructor(){
         this.asteroids = []; 
@@ -12,7 +12,7 @@ class Game {
     }
 
     addAsteroids(){
-        for (let i = 0; i < 10; i++){
+        for (let i = 0; i < Game.NUM_ASTEROIDS; i++){
             let randPos = this.randomPosition();
             this.asteroids.push(new Asteroid({pos:randPos}))
         }
@@ -25,7 +25,7 @@ class Game {
     }
 
     draw(ctx) {
-        ctx.clearRect(0, 0, 500, 500); 
+        ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y); 
         this.asteroids.forEach((rock) => rock.draw(ctx))
     }
 
