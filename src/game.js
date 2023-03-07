@@ -1,7 +1,7 @@
 import Asteroid from "./asteroid";
 
 class Game {
-    static DIM_X = 500;
+    static DIM_X = 1000;
     static DIM_Y = 500;
     static NUM_ASTEROIDS = 10;
 
@@ -19,8 +19,8 @@ class Game {
     }
 
     randomPosition() {
-        const x = Math.floor(Math.random() * 501)
-        const y = Math.floor(Math.random() * 501)
+        const x = Math.floor(Math.random() * (Game.DIM_X+1))
+        const y = Math.floor(Math.random() * (Game.DIM_Y))
         return [x, y]; 
     }
 

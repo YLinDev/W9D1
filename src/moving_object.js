@@ -17,7 +17,7 @@ class MovingObject {
     // ctx.fill()
 
     const image = document.getElementById("src")
-    ctx.drawImage(image, this.pos[0], this.pos[1], 50, 50)
+    ctx.drawImage(image, this.pos[0], this.pos[1], 200, 200)
   }
 
   move() {
